@@ -1,0 +1,131 @@
+# Amplitude-Modulation
+
+EXP NO: 1	GENERATION AND DETECTION OF AM
+
+AIM:
+
+To generate and detect the amplitude modulation and demodulation using SCILAB and to calculate modulation index of AM.
+
+EQUIPMENTS REQUIRED
+
+•	Computer with i3 Processor
+
+•	SCI LAB
+
+THEORY:
+
+Modulation can be defined as the process by which the characteristics of carrier wave are varied in accordance with the modulating wave (signal). Modulation is performed in a transmitter by a circuit called a modulator.
+Need for modulation is as follows:
+•	Avoid mixing of signals
+•	Reduction in antenna height
+•	long distance communication
+•	Multiplexing
+•	Improve the quality of reception
+•	Ease of radiation.
+Amplitude Modulation is the process of changing the amplitude of a relatively high frequency carrier signal in proportion with the instantaneous value of the modulating signal. The output waveform contains all the frequencies that make up the AM signal and is used to transport the information through the system. Therefore the shape of the modulated wave is called the AM envelope. With no modulating signal the output waveform is simply the carrier signal. Coefficient of modulation is a term used to describe the amount of amplitude change present in an AM waveform. There are three degrees of modulation available based on value of modulation index.
+1)	Under modulation :	m<1, Em < Ec
+2)	Critical modulation: m-1, Em = Ec
+3)	Over modulation:	m>1, Em > Ec
+
+
+
+Note: Keep all the switch faults in off position
+
+Algorithm
+1.	Define Parameters
+First, define the parameters for your signals:
+•	Carrier frequency (fc)
+•	Modulating signal frequency (fm)
+•	Sampling frequency (Fs)
+•	Duration of the signal (T)
+
+
+2.	Create a time vector based on the sampling frequency and duration.
+ 
+3.	Create Modulating Signal
+Define the modulating signal (message signal).
+
+4.	Create Carrier Signal
+Define the carrier signal.
+
+
+5.	Perform Amplitude Modulation
+Multiply the carrier signal by the modulating signal plus 1 (to ensure the modulation depth).
+
+
+6.	Plot the Signals
+Visualize the modulating, carrier, and modulated signals.
+
+
+7.	Demodulate the AM Signal
+To demodulate, you can use envelope detection. One way is to rectify the signal and then apply a low-pass filter.
+
+8.	Plot the Demodulated Signal
+Visualize the demodulated signal.
+
+
+9.	Compare Signals
+Compare the original modulating signal with the demodulated signal. PROCEDURE
+•	Refer Algorithms and write code for the experiment.
+•	Open SCILAB in System
+•	Type your code in New Editor
+•	Save the file
+•	Execute the code
+•	If any Error, correct it in code and execute again
+•	Verify the generated waveform using Tabulation and Model Waveform
+
+Program
+ 
+  am=4.8;
+  
+  fm=362;
+  
+  ac=9.6;
+  
+  fc=3620;
+  
+  fs=36200;
+  
+  t=0:1/fs:3/fm;
+  
+  em=am* cos(2* 3.14* fm* t);
+  
+  subplot(3,1,1);
+  
+  plot(t,em);
+  
+  ec=ac* cos(2* 3.14* fc* t);
+  
+  subplot(3,1,2);
+  
+  plot(t,ec);
+  
+  eam=ac*(1+(em/ac)) *cos(2 * 3.14* fc* t);
+  
+  subplot(3,1,3);
+  
+  plot(t,eam);
+  
+
+Output Waveform
+<img width="1912" height="1132" alt="image" src="https://github.com/user-attachments/assets/ca984cc9-e4c5-457d-b6e8-c9e5d1ca8d82" />
+
+
+TABULATION:
+![WhatsApp Image 2026-02-23 at 15 18 19](https://github.com/user-attachments/assets/6d4704e9-0064-47be-b69f-26485e6adacc)
+
+
+Calculation
+1.	ma (Theory) = am/ac = 4.8/9.6 = 0.5
+2.	ma(Practical) = (Emax-Emin)/(Emax+Emin) = (7.57-4.8)/(7.57+4.8) = 0.223
+
+
+MODEL GRAPH
+ <img width="919" height="1290" alt="image" src="https://github.com/user-attachments/assets/55326c5b-7dd5-4873-aaf6-d219bb7c4420" />
+
+ 
+ 
+
+
+RESULT:
+Thus the amplitude modulation and demodulation is experimentally done and the output is verified.
